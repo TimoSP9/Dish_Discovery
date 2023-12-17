@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SecondPageView: View {
     
-    @State private var searchText: String = ""
+    @State private var nameText: String = ""
     @State private var selectedPreference: String = ""
     @Binding var currentPage: Int
     public var foodList: [String] = [
@@ -21,10 +21,10 @@ struct SecondPageView: View {
     ]
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             Form {
                 Section("Name") {
-                    TextField("Enter your name", text: $searchText)
+                    TextField("Enter your name", text: $nameText)
                     
                 }
                 List{
@@ -43,19 +43,22 @@ struct SecondPageView: View {
                     )
                     .pickerStyle(.inline)
                 }
-                
-                Button(action : {
-                    currentPage = 2
-                }){
-                    Text("Continue")
-                    
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.red)
-                .foregroundColor(.white)
-                .clipShape(.buttonBorder)
             }
+            .background(Color(uiColor: .secondarySystemBackground))
+            
+            Button(action : {
+                currentPage = 2
+                print("DEBUG: \(nameText)")
+            }){
+                Text("Continue")
+                
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .clipShape(.buttonBorder)
+            .padding()
         }
         .navigationTitle("Let's us know your taste")
     }
