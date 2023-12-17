@@ -5,7 +5,7 @@ struct ContentView: View {
     var body: some View {
         // MARK: Kyk babi
         NavigationStack{
-            //            TabView{
+
             if(currentPage == 0) {
                 FirstPageView(currentPage: $currentPage)
             } else if(currentPage == 1) {
