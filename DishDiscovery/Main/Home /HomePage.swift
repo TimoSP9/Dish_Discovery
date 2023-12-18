@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomePage: View {
     @State private var searchFood: String = ""
+    @Binding var currentPage: Int
         
     var body: some View {
        
@@ -19,10 +20,10 @@ struct HomePage: View {
                     
                     Text("Hello, ")
                     Spacer()
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .frame(width: 56, height: 56, alignment: .center)
-                        
+                    Button(action: {currentPage = 6} ){
+                        Label("", systemImage:  "person.fill")
+                    }
+                    .frame(width: 56, height: 56, alignment: .center)
                 }
                 .padding()
                 

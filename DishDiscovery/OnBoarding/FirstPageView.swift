@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct FirstPageView: View {
+    
+   
     @Binding var currentPage: Int
+    
     var body: some View {
         ZStack {
             Image("bg3")

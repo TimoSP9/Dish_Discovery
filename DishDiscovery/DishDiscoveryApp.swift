@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct DishDiscoveryApp: App {
-    var body: some Scene {
+    
+    @State private var currentPage: Int = 0
+    
+        var body: some Scene {
         WindowGroup {
-            HomePage()
+            HomePage(currentPage: $currentPage)
                 .environment(\.colorScheme, .dark)
         }
     }

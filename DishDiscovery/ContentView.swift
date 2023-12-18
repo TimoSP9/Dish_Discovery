@@ -11,7 +11,11 @@ struct ContentView: View {
             } else if(currentPage == 1) {
                 SecondPageView(currentPage: $currentPage)
             } else if(currentPage == 2){
-                HomePage()
+                HomePage(currentPage: $currentPage)
+            } else if(currentPage == 6){
+                profileView(currentPage: $currentPage)
+            } else if(currentPage == 9){
+                fPreferenceView(currentPage: $currentPage)
             }
         }
     }
