@@ -11,7 +11,7 @@ import SwiftUI
 struct DishDiscoveryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomePage()
                 .environment(\.colorScheme, .dark)
         }
     }
