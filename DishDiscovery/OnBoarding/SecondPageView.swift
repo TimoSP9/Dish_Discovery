@@ -37,6 +37,7 @@ struct SecondPageView: View {
                     }, label: {
                         HStack {
                             Text("Food Preference")
+                            Spacer()
                             Text("Optional")
                         }
                     }

@@ -9,22 +9,34 @@ import SwiftUI
 
 struct profileView: View {
     @Binding var currentPage : Int
-    
-    
     var body: some View {
         VStack{
-            HStack{
-                Image("person.fill")
-                    .resizable()
-                    .frame(width: 84, height: 84, alignment: .leading)
-                Text("")
-                
-            }
             
+            Group{
+                HStack{
+                    Button(action: {}){
+                        Text("<")
+                    }
+                    .padding()
+                    Image("person.fill")
+                        .resizable()
+                        .frame(width: 84, height: 84, alignment: .leading)
+                        .padding()
+                        .foregroundColor(.white)
+                    
+                    Text("okky")
+                        .bold()
+                        
+                }
+            }
+            Spacer()
             Group{
                 VStack{
                     Text("Favourite")
+                        .bold()
                         .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.title2)
                     Spacer()
                     HStack{
                         
@@ -32,13 +44,16 @@ struct profileView: View {
                     Spacer()
                     HStack{
                         Text("Food Preference")
+                            .frame(alignment: .leading)
                         Spacer()
                         Button(action: {currentPage = 9}){
                             Text(">")
                         }
+                        .padding()
                     }
                 }
             }
+            Spacer()
         }
     }
 }

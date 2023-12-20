@@ -25,12 +25,20 @@ struct fPreferenceView: View {
         VStack{
             Button(action: {currentPage = 6 }){
                 Text("<")
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .padding()
             }
-            Spacer()
+            
             Text("Food \nPreference")
                 .font(.title)
+                .bold()
                 .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
             Text("Change your food preference here")
+                .font(.caption)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .foregroundColor(.red)
+
             Spacer()
             List{
                 Picker(selection: $selectedPreference, content:
@@ -42,12 +50,16 @@ struct fPreferenceView: View {
                 }, label: {
                     HStack {
                         Text("Food Preference")
-                        Text("Optional")
+                        
                     }
                 }
                 )
                 .pickerStyle(.inline)
             }
+            Button(action:{}){
+                Text("Change Preference")
+            }
+            Spacer()
         }
     }
 }
