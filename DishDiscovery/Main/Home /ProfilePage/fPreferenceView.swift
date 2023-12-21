@@ -35,7 +35,7 @@ struct fPreferenceView: View {
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
             Text("Change your food preference here")
-                .font(.caption)
+                .font(.title2)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.red)
 

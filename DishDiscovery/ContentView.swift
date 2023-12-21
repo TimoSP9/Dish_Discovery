@@ -5,13 +5,15 @@ struct ContentView: View {
     var body: some View {
         // MARK: Kyk babi
         NavigationStack{
-
+            
             if(currentPage == 0) {
                 FirstPageView(currentPage: $currentPage)
             } else if(currentPage == 1) {
                 SecondPageView(currentPage: $currentPage)
             } else if(currentPage == 2){
                 HomePage(currentPage: $currentPage)
+            } else if (currentPage == 5){
+                        recommView(currentPage : $currentPage)
             } else if(currentPage == 6){
                 profileView(currentPage: $currentPage)
             } else if(currentPage == 9){

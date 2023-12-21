@@ -39,9 +39,7 @@ struct HomePage: View {
                             Text("Recommendation")
                                 .font(.title2)
                             Spacer()
-                            Button(action: {
-                                
-                            }, label: {
+                            Button(action: {currentPage = 5}, label: {
                                 Text("See all")
                                 
                             })

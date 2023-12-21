@@ -25,6 +25,7 @@
 		04A198AF2B306D2B00D3FE61 /* filterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A198AE2B306D2B00D3FE61 /* filterPage.swift */; };
 		04A198B12B306DCA00D3FE61 /* whatNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A198B02B306DCA00D3FE61 /* whatNewView.swift */; };
 		04C921FB2B2D41A50031AD27 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C921FA2B2D41A50031AD27 /* HomePage.swift */; };
+		04F3D3382B34518B0093E4D4 /* recommView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3D3372B34518B0093E4D4 /* recommView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		04A198AE2B306D2B00D3FE61 /* filterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterPage.swift; sourceTree = "<group>"; };
 		04A198B02B306DCA00D3FE61 /* whatNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whatNewView.swift; sourceTree = "<group>"; };
 		04C921FA2B2D41A50031AD27 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		04F3D3372B34518B0093E4D4 /* recommView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				04C921FA2B2D41A50031AD27 /* HomePage.swift */,
+				04F3D3372B34518B0093E4D4 /* recommView.swift */,
 				042CCBD12B3017BB008CE76D /* ProfilePage */,
 				04A198B02B306DCA00D3FE61 /* whatNewView.swift */,
 			);
@@ -353,6 +356,7 @@
 				040D84792B1C8EF0002FCB76 /* ContentView.swift in Sources */,
 				042CCBD52B301808008CE76D /* profileView.swift in Sources */,
 				0469FAE92B2C22B800919F71 /* FirstPageView.swift in Sources */,
+				04F3D3382B34518B0093E4D4 /* recommView.swift in Sources */,
 				04A198AF2B306D2B00D3FE61 /* filterPage.swift in Sources */,
 				040D84772B1C8EF0002FCB76 /* DishDiscoveryApp.swift in Sources */,
 				042CCBD72B301DEC008CE76D /* fPreferenceView.swift in Sources */,
