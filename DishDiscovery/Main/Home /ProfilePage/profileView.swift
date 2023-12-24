@@ -8,51 +8,42 @@
 import SwiftUI
 
 struct profileView: View {
-    @Binding var currentPage : Int
+    
     var body: some View {
-        VStack{
-            
-            Group{
-                HStack{
-                    Button(action: {}){
-                        Text("<")
-                    }
+        ScrollView {
+            VStack {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .frame(width: 64, height: 64, alignment: .leading)
                     .padding()
-                    Image("person.fill")
-                        .resizable()
-                        .frame(width: 84, height: 84, alignment: .leading)
-                        .padding()
-                        .foregroundColor(.white)
-                    
-                    Text("okky")
-                        .bold()
-                        
-                }
+                Text("okky")
+                    .bold()
             }
+            .foregroundColor(.white)
+            .padding()
+            
             Spacer()
-            Group{
-                VStack{
-                    Text("Favourite")
-                        .bold()
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.title2)
-                    Spacer()
-                    HStack{
-                        
-                    }
-                    Spacer()
-                    HStack{
-                        Text("Food Preference")
-                            .frame(alignment: .leading)
-                        Spacer()
-                        Button(action: {currentPage = 9}){
-                            Text(">")
-                        }
-                        .padding()
-                    }
+            
+            VStack{
+                Text("Favourite")
+                    .bold()
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.title2)
+                Spacer()
+                HStack{
+                    
                 }
+                Spacer()
+                HStack{
+                    Text("Food Preference")
+                        .frame(alignment: .leading)
+                    Spacer()
+                }
+                
+                .padding()
             }
+            
             Spacer()
         }
     }

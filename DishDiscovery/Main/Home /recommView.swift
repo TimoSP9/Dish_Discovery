@@ -10,6 +10,7 @@ import SwiftUI
 
 struct recommView: View {
     @Binding var currentPage : Int
+    @State private var selectedTab = 0
     
     var body: some View {
         
@@ -22,17 +23,17 @@ struct recommView: View {
                 Text("Recommandation")
                     .font(.title2)
                     .bold()
-                    
+                
             }
             .frame(alignment: .topLeading)
             Spacer()
             ScrollView {
-                    VStack(alignment: .leading) {
-                        ForEach(0..<100) {
-                            Text("Row \($0)")
-                        }
+                VStack(alignment: .leading) {
+                    ForEach(0..<100) {
+                        Text("Row \($0)")
                     }
                 }
+            }
         }
     }
 }

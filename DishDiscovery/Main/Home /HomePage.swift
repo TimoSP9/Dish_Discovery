@@ -9,108 +9,109 @@ import SwiftUI
 
 struct HomePage: View {
     @State private var searchFood: String = ""
-    @Binding var currentPage: Int
     
     var body: some View {
         NavigationStack{
-            VStack{
-                Group {
-                    VStack {
-                        
-                        HStack {
+            ScrollView {
+                VStack{
+                    Group {
+                        VStack {
                             
-                            Text("Hello, ")
-                            Spacer()
-                            Button(action: {currentPage = 6} ){
-                                Label("", systemImage:  "person.fill")
-                            }
-                            .frame(width: 56, height: 56, alignment: .center)
-                        }
-                        Section{
-                            TextField("Search...", text: $searchFood)
-                        }
-                    }
-                    
-                }
-                Group{
-                    VStack{
-                        
-                        HStack{
-                            Text("Recommendation")
-                                .font(.title2)
-                            Spacer()
-                            Button(action: {currentPage = 5}, label: {
-                                Text("See all")
+                            HStack {
                                 
-                            })
-                            .padding()
+                                Text("Hello, ")
+                                Spacer()
+                                NavigationLink(destination: profileView()) {
+                                    
+                                        Label("", systemImage:  "person.fill")
+                                }
+                                .frame(width: 56, height: 56, alignment: .center)
+                            }
+                            Section{
+                                TextField("Search...", text: $searchFood)
+                            }
                         }
                         
-                        ScrollView([.horizontal]){
-                            HStack  {
-                                ForEach(0..<100) {
-                                    Text("Row \($0)")
-                                        .foregroundColor(.white)
-                                }
-                            }
-                            .padding()
-                        }
                     }
-                }
-                Spacer()
-                
-                Group{
-                    
-                    VStack{
-                        Text("Popular Category")
-                            .padding()
-                            .font(.title2)
-                            .frame(maxWidth:.infinity, alignment: .leading)
-                        ScrollView([.horizontal]){
+                    Group{
+                        VStack{
+                            
                             HStack{
-                                Button(action: {
-                                    
-                                }, label: {
-                                    Text("Breakfast")
-                                    
-                                })
-                                .padding()
-                                Button(action: {
-                                    
-                                }, label: {
-                                    Text("Lunch")
-                                    
-                                })
-                                .padding()
-                                Button(action: {
-                                    
-                                }, label: {
-                                    Text("Dinner")
-                                    
-                                })
-                                .padding()
-                                Button(action: {
-                                    
-                                }, label: {
-                                    Text("Appetizer")
-                                    
-                                })
-                                .padding()
+                                Text("Recommendation")
+                                    .font(.title2)
+                                Spacer()
+                                //                            Button(action: {currentPage = 5}, label: {
+                                //                                Text("See all")
+                                //
+                                //                            })
+                                //                            .padding()
                             }
-                        }
-                        Grid{
-                            GridRow{
-                                Text("")
+                            
+                            ScrollView([.horizontal]){
+                                HStack  {
+                                    ForEach(0..<100) {
+                                        Text("Row \($0)")
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                                .padding()
                             }
                         }
                     }
                     Spacer()
+                    
+                    Group{
+                        
+                        VStack{
+                            Text("Popular Category")
+                                .font(.title2)
+                                .frame(maxWidth:.infinity, alignment: .leading)
+                            ScrollView([.horizontal]){
+                                HStack{
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Text("Breakfast")
+                                        
+                                    })
+                                    .padding()
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Text("Lunch")
+                                        
+                                    })
+                                    .padding()
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Text("Dinner")
+                                        
+                                    })
+                                    .padding()
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Text("Appetizer")
+                                        
+                                    })
+                                }
+                            }
+                            
+                            VStack(alignment: .leading) {
+                                ForEach(0..<100) {
+                                    Text("Row \($0)")
+                                }
+                            }
+                        }
+                    }
                 }
+                .padding()
             }
         }
     }
 }
 
-//#Preview {
-//    HomePage()
-//}
+#Preview {
+    HomePage()
+}
