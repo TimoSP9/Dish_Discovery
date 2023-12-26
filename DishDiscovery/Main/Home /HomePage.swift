@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomePage: View {
     @State private var searchFood: String = ""
+    let data = Array(1...100)
     
     var body: some View {
         NavigationStack{
@@ -23,7 +24,7 @@ struct HomePage: View {
                                 Spacer()
                                 NavigationLink(destination: profileView()) {
                                     
-                                        Label("", systemImage:  "person.fill")
+                                    Label("", systemImage:  "person.fill")
                                 }
                                 .frame(width: 56, height: 56, alignment: .center)
                             }
@@ -40,15 +41,12 @@ struct HomePage: View {
                                 Text("Recommendation")
                                     .font(.title2)
                                 Spacer()
-                                //                            Button(action: {currentPage = 5}, label: {
-                                //                                Text("See all")
-                                //
-                                //                            })
-                                //                            .padding()
+                                NavigationLink(destination: recommView()){
+                                    Text ("See All")
+                                }
                             }
-                            
                             ScrollView([.horizontal]){
-                                HStack  {
+                                HStack {
                                     ForEach(0..<100) {
                                         Text("Row \($0)")
                                             .foregroundColor(.white)
@@ -98,11 +96,15 @@ struct HomePage: View {
                                 }
                             }
                             
-                            VStack(alignment: .leading) {
-                                ForEach(0..<100) {
-                                    Text("Row \($0)")
+                            LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2)) {
+                                ForEach(data, id: \.self) { item in
+                                    Text("Item \(item)")
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
                                 }
                             }
+                            .padding()
                         }
                     }
                 }
@@ -111,7 +113,6 @@ struct HomePage: View {
         }
     }
 }
-
-#Preview {
-    HomePage()
-}
+//#Preview {
+//  HomePage()
+//}

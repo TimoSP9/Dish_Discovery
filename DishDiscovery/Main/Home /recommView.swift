@@ -9,30 +9,28 @@ import SwiftUI
 
 
 struct recommView: View {
-    @Binding var currentPage : Int
-    @State private var selectedTab = 0
+    let data = Array(1...100)
     
     var body: some View {
         
         VStack{
-            HStack{
-                Button(action:{currentPage = 2}){
-                    Text("<")
-                }
-                
-                Text("Recommandation")
-                    .font(.title2)
-                    .bold()
-                
-            }
-            .frame(alignment: .topLeading)
+            Text("Recommandation")
+                .font(.title)
+                .bold()
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
             Spacer()
             ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(0..<100) {
-                        Text("Row \($0)")
+                LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2)) {
+                    ForEach(data, id: \.self) { item in
+                        Text("Item \(item)")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
                     }
                 }
+                .padding()
             }
         }
     }
