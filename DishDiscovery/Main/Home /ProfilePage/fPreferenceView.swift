@@ -16,9 +16,7 @@ struct fPreferenceView: View {
     public var foodList: [String] = [
         "Vegan",
         "Kosher",
-        "Halal",
-        "Gluten-Free",
-        "Daily-Free"
+        "Halal"
     ]
     
     var body: some View {

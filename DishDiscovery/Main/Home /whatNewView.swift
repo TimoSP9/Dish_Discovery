@@ -25,11 +25,7 @@ struct whatNewView: View {
                 HStack{
                     Button(action:{} , label: {Text( "Vegan")})
                         .padding()
-                    Button(action:{} , label: {Text( "Gluten")})
-                        .padding()
                     Button(action:{} , label: {Text( "Halal")})
-                        .padding()
-                    Button(action:{} , label: {Text( "Diet")})
                         .padding()
                     Button(action:{} , label: {Text( "Kosher")})
                         .padding()
@@ -37,12 +33,12 @@ struct whatNewView: View {
                 .font(.title3)
                 Spacer()
             }
-            Text("New")
-                .font(.title2)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-            Spacer()
+            //Text("New")
+                //.font(.title2)
+                //.bold()
+                //.frame(maxWidth: .infinity, alignment: .leading)
+                //.padding()
+            //Spacer()
 //            VStack{
 //                HStack{
 //                    Image()

@@ -15,9 +15,7 @@ struct SecondPageView: View {
     public var foodList: [String] = [
         "Vegan",
         "Kosher",
-        "Halal",
-        "Gluten-Free",
-        "Daily-Free"
+        "Halal"
     ]
     
     var body: some View {
@@ -61,6 +59,6 @@ struct SecondPageView: View {
             .clipShape(.buttonBorder)
             .padding()
         }
-        .navigationTitle("Let's us know your taste")
+        .navigationTitle("Start Your Journey")
     }
 }

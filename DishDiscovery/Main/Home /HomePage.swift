@@ -21,6 +21,7 @@ struct HomePage: View {
                             HStack {
                                 
                                 Text("Hello, ")
+                                    .font(.title3)
                                 Spacer()
                                 NavigationLink(destination: profileView()) {
                                     
@@ -28,12 +29,9 @@ struct HomePage: View {
                                 }
                                 .frame(width: 56, height: 56, alignment: .center)
                             }
-                            Section{
-                                TextField("Search...", text: $searchFood)
-                            }
                         }
-                        
                     }
+                    Spacer()
                     Group{
                         VStack{
                             
@@ -59,43 +57,31 @@ struct HomePage: View {
                     Spacer()
                     
                     Group{
-                        
                         VStack{
                             Text("Popular Category")
                                 .font(.title2)
                                 .frame(maxWidth:.infinity, alignment: .leading)
-                            ScrollView([.horizontal]){
+                            Spacer()
                                 HStack{
+                                    Spacer()
                                     Button(action: {
-                                        
                                     }, label: {
                                         Text("Breakfast")
-                                        
                                     })
-                                    .padding()
+                                    Spacer()
                                     Button(action: {
-                                        
                                     }, label: {
                                         Text("Lunch")
-                                        
                                     })
-                                    .padding()
+                                    Spacer()
                                     Button(action: {
                                         
                                     }, label: {
                                         Text("Dinner")
-                                        
                                     })
-                                    .padding()
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Text("Appetizer")
-                                        
-                                    })
+                                    Spacer()
                                 }
-                            }
-                            
+                                
                             LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2)) {
                                 ForEach(data, id: \.self) { item in
                                     Text("Item \(item)")

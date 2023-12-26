@@ -26,24 +26,14 @@ struct profileView: View {
                 Spacer()
                 
                 VStack{
-                    Text("Favourite")
-                        .bold()
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.title2)
-                    Spacer()
-                    HStack{
-                        
-                    }
-                    Spacer()
+                    
                     HStack{
                         Text("What's New")
                             .frame(alignment: .leading)
                             .font(.title3)
                         Spacer()
                         NavigationLink(destination: whatNewView()) {
-                            
-                            Text(">")
+                            Text("Check")
                         }
                     }
                     .padding()
