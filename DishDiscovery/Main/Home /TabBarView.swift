@@ -17,17 +17,17 @@ struct TabBarView: View {
         TabView(selection: $selectedTab) {
             HomePage()
                 .tabItem {
-                    Image(systemName: "1.square.fill")
+                    Image(systemName: "house.circle.fill")
                     Text("Home")
                 }
             Text("")
                 .tabItem {
-                    Image(systemName: "2.square.fill")
+                    Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
                 }
             Text("")
                 .tabItem {
-                    Image(systemName: "3.square.fill")
+                    Image(systemName: "fork.knife.circle.fill")
                     Text("Filter")
                 }
         }
