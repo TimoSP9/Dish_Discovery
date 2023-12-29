@@ -25,7 +25,7 @@ struct TabBarView: View {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
                 }
-            Text("")
+            filterPage()
                 .tabItem {
                     Image(systemName: "fork.knife.circle.fill")
                     Text("Filter")

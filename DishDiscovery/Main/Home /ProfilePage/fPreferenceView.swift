@@ -11,6 +11,7 @@ import SwiftUI
 struct fPreferenceView: View {
     
     @State private var selectedPreference: String = ""
+    @State private var showAlert = false
     
     
     public var foodList: [String] = [
@@ -49,14 +50,21 @@ struct fPreferenceView: View {
                     )
                     .pickerStyle(.inline)
                 }
-                Button(action:{}){
-                    Text("Change Preference")
+                Button("Change Preference"){
+                    showAlert = true
                 }
-                Spacer()
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Food Preference has been change"),
+                        message: Text("Enjoy your new delicacy")
+                    )
+                }
             }
+            Spacer()
         }
     }
 }
+
 
 //#Preview {
 //    fPreferenceView()

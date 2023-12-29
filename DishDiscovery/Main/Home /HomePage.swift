@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomePage: View {
-    @State private var searchFood: String = ""
+    
     let data = Array(1...100)
     
     var body: some View {
