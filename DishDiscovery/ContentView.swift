@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var currentPage: Int = 0
     var body: some View {
-        // MARK: Kyk babi
+        
         NavigationStack{
             
             if(currentPage == 0) {
@@ -12,8 +13,10 @@ struct ContentView: View {
                 SecondPageView(currentPage: $currentPage)
             } else if(currentPage == 2){
                 TabBarView(currentPage: $currentPage)
-            } 
+            }
         }
+        
+        
     }
 }
 

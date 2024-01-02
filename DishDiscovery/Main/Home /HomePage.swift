@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomePage: View {
     
+    @State var SaveName = ""
     let data = Array(1...100)
     
     var body: some View {
@@ -20,7 +21,7 @@ struct HomePage: View {
                             
                             HStack {
                                 
-                                Text("Hello, ")
+                                Text("\(SaveName)")
                                     .font(.title3)
                                 Spacer()
                                 NavigationLink(destination: profileView()) {
@@ -93,10 +94,15 @@ struct HomePage: View {
                             .padding()
                         }
                     }
-                }
+                }.onAppear(perform: {
+                    getData()
+                })
                 .padding()
             }
         }
+    }
+    func getData(){
+        SaveName = "Hello, \(UserDefaults.standard.string(forKey: "userName") ?? "")"
     }
 }
 //#Preview {

@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
 struct profileView: View {
+    
+    @State var SaveName = ""
     
     var body: some View {
         NavigationStack{
@@ -17,9 +20,11 @@ struct profileView: View {
                         .resizable()
                         .frame(width: 64, height: 64, alignment: .leading)
                         .padding()
-                    Text("okky")
+                    Text("\(SaveName)")
                         .bold()
-                }
+                }.onAppear(perform: {
+                    getData()
+                })
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
                 
@@ -54,6 +59,9 @@ struct profileView: View {
                 Spacer()
             }
         }
+    }
+    func getData(){
+        SaveName = "\(UserDefaults.standard.string(forKey: "userName") ?? "")"
     }
 }
 

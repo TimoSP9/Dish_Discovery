@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SecondPageView: View {
     
+    
     @State private var nameText: String = ""
     @State private var selectedPreference: String = ""
     @Binding var currentPage: Int
@@ -17,6 +18,7 @@ struct SecondPageView: View {
         "Kosher",
         "Halal"
     ]
+    
     
     var body: some View {
         NavigationStack {
@@ -47,7 +49,7 @@ struct SecondPageView: View {
             
             Button(action : {
                 currentPage = 2
-                print("DEBUG: \(nameText)")
+                print("DEBUG: \(saveData())")
             }){
                 Text("Continue")
                 
@@ -61,4 +63,8 @@ struct SecondPageView: View {
         }
         .navigationTitle("Start Your Journey")
     }
+    func saveData(){
+        UserDefaults.standard.set(self.nameText, forKey: "userName")
+    }
+    
 }
