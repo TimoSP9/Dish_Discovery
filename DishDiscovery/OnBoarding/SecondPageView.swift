@@ -65,6 +65,7 @@ struct SecondPageView: View {
     }
     func saveData(){
         UserDefaults.standard.set(self.nameText, forKey: "userName")
+        UserDefaults.standard.set(true, forKey: "isOnBoardingFinish")
     }
     
 }
