@@ -7,27 +7,24 @@
 
 import SwiftUI
 
+struct RecommView: View {
+    let recipes: [Recipe]
 
-struct recommView: View {
-    let data = Array(1...100)
-    
     var body: some View {
-        
-        VStack{
-            Text("Recommandation")
+        VStack {
+            Text("Recommendation")
                 .font(.title)
                 .bold()
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
+
             Spacer()
             ScrollView {
                 LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2)) {
-                    ForEach(data, id: \.self) { item in
-                        Text("Item \(item)")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
+                    ForEach(recipes.shuffled().prefix(20), id: \.id) { recipe in
+                        NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                            RecipeItemView(recipe: recipe)
+                        }
                     }
                 }
                 .padding()
@@ -35,7 +32,3 @@ struct recommView: View {
         }
     }
 }
-
-//#Preview {
-//    recommView()
-//}

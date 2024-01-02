@@ -23,6 +23,8 @@
 		04A198AC2B306D0D00D3FE61 /* searchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A198AB2B306D0D00D3FE61 /* searchPage.swift */; };
 		04A198AF2B306D2B00D3FE61 /* filterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A198AE2B306D2B00D3FE61 /* filterPage.swift */; };
 		04A198B12B306DCA00D3FE61 /* whatNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A198B02B306DCA00D3FE61 /* whatNewView.swift */; };
+		04BF5DB02B445A4300B261FB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5DAF2B445A4300B261FB /* Recipe.swift */; };
+		04BF5DB22B445AA500B261FB /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5DB12B445AA500B261FB /* RecipeDetailView.swift */; };
 		04C921FB2B2D41A50031AD27 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C921FA2B2D41A50031AD27 /* HomePage.swift */; };
 		04F3D3382B34518B0093E4D4 /* recommView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3D3372B34518B0093E4D4 /* recommView.swift */; };
 /* End PBXBuildFile section */
@@ -59,11 +61,13 @@
 		042CCBD62B301DEC008CE76D /* fPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fPreferenceView.swift; sourceTree = "<group>"; };
 		0469FAE82B2C22B800919F71 /* FirstPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
 		0469FAEA2B2C22C800919F71 /* SecondPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageView.swift; sourceTree = "<group>"; };
-		046A36222B2EEF5100D394D8 /* resep.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = resep.json; path = ../../../../Downloads/resep.json; sourceTree = "<group>"; };
+		046A36222B2EEF5100D394D8 /* resep.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resep.json; sourceTree = "<group>"; };
 		048DF4932B37FF1D0034D2A4 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		04A198AB2B306D0D00D3FE61 /* searchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchPage.swift; sourceTree = "<group>"; };
 		04A198AE2B306D2B00D3FE61 /* filterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterPage.swift; sourceTree = "<group>"; };
 		04A198B02B306DCA00D3FE61 /* whatNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whatNewView.swift; sourceTree = "<group>"; };
+		04BF5DAF2B445A4300B261FB /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		04BF5DB12B445AA500B261FB /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		04C921FA2B2D41A50031AD27 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		04F3D3372B34518B0093E4D4 /* recommView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 				040D84782B1C8EF0002FCB76 /* ContentView.swift */,
 				DB2DA63D2B2ED66F008E81DA /* Assets */,
 				040D847C2B1C8EF3002FCB76 /* Preview Content */,
+				04BF5DAF2B445A4300B261FB /* Recipe.swift */,
+				04BF5DB12B445AA500B261FB /* RecipeDetailView.swift */,
 			);
 			path = DishDiscovery;
 			sourceTree = "<group>";
@@ -354,9 +360,11 @@
 				04F3D3382B34518B0093E4D4 /* recommView.swift in Sources */,
 				04A198AF2B306D2B00D3FE61 /* filterPage.swift in Sources */,
 				040D84772B1C8EF0002FCB76 /* DishDiscoveryApp.swift in Sources */,
+				04BF5DB22B445AA500B261FB /* RecipeDetailView.swift in Sources */,
 				042CCBD72B301DEC008CE76D /* fPreferenceView.swift in Sources */,
 				04A198B12B306DCA00D3FE61 /* whatNewView.swift in Sources */,
 				04A198AC2B306D0D00D3FE61 /* searchPage.swift in Sources */,
+				04BF5DB02B445A4300B261FB /* Recipe.swift in Sources */,
 				048DF4942B37FF1D0034D2A4 /* TabBarView.swift in Sources */,
 				0469FAEB2B2C22C800919F71 /* SecondPageView.swift in Sources */,
 			);
