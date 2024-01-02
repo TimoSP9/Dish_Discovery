@@ -42,10 +42,11 @@ struct profileView: View {
                         }
                     }
                     .padding()
+                    
                     Spacer()
+                    
                     HStack{
                         Text("Food Preference")
-                            .padding()
                             .frame(alignment: .leading)
                             .font(.title3)
                         Spacer()
@@ -54,9 +55,10 @@ struct profileView: View {
                             Text("Change")
                         }
                     }
+                    .padding()
+                    
                     Spacer()
                 }
-                Spacer()
             }
         }
     }

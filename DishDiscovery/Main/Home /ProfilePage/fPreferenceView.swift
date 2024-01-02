@@ -23,15 +23,11 @@ struct fPreferenceView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Text("Food \nPreference")
-                    .font(.title)
-                    .bold()
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text("Change your food preference here")
                     .font(.title2)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.red)
+                    .padding(.horizontal)
                 
                 Spacer()
                 List{
@@ -60,7 +56,8 @@ struct fPreferenceView: View {
                     )
                 }
             }
-            Spacer()
+            .navigationTitle("My Preference")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

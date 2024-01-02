@@ -57,7 +57,9 @@ struct HomePage: View {
                             }
                         }
                     }
+                    
                     Spacer()
+                    
                     Group {
                         VStack {
                             HStack {
@@ -68,7 +70,8 @@ struct HomePage: View {
                                     Text("See All")
                                 }
                             }
-                            ScrollView([.horizontal]) {
+                            
+                            ScrollView([.horizontal], showsIndicators: false) {
                                 LazyHStack {
                                     ForEach(recipes.prefix(10), id: \.id) { recipe in
                                         NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
@@ -76,7 +79,6 @@ struct HomePage: View {
                                         }
                                     }
                                 }
-                                .padding()
                             }
                         }
                     }
@@ -142,9 +144,3 @@ struct HomePage: View {
         }
     }
 }
-
-
-
-//#Preview {
-//  HomePage()
-//}

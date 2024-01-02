@@ -29,7 +29,7 @@ struct ContentView: View {
     }
     func getData(){
         onBoardingfinish = UserDefaults.standard.bool(forKey: "isOnBoardingFinish")
-        print(onBoardingfinish)
+        print("DEBUG: \(onBoardingfinish)")
     }
 }
 
