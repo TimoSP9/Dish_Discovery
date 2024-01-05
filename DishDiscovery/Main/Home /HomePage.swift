@@ -73,7 +73,7 @@ struct HomePage: View {
                             
                             ScrollView([.horizontal], showsIndicators: false) {
                                 LazyHStack {
-                                    ForEach(recipes.prefix(10), id: \.id) { recipe in
+                                    ForEach(recipes.shuffled().prefix(10), id: \.id) { recipe in
                                         NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                             RecipeItemView(recipe: recipe)
                                         }

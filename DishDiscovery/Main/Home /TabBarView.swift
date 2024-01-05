@@ -20,7 +20,7 @@ struct TabBarView: View {
                     Image(systemName: "house.circle.fill")
                     Text("Home")
                 }
-            Text("")
+            searchPage()
                 .tabItem {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
