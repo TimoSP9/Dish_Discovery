@@ -12,6 +12,7 @@ struct TabBarView: View {
     @State var selectedTab = 0
     @Binding var currentPage: Int
     
+    
     var body: some View {
         
         TabView(selection: $selectedTab) {
