@@ -47,55 +47,57 @@ struct filterPage: View {
                     Text("Ingredient")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
                         .bold()
-
+                    Spacer()
+                    
                     // Display selected ingredients
-                    List(selectedIngredients, id: \.self) { ingredient in
-                        Text("\(ingredient.name) - \(ingredient.weight) gr")
-                    }
-                    .padding()
-
                     TextField("Add Ingredient Name", text: Binding(
                         get: { self.filterCriteria.ingredientName ?? "" },
                         set: { self.filterCriteria.ingredientName = $0 }
                     ))
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                    
+                    Spacer()
+                    
                     TextField("Add Ingredient Weight (gr)", text: Binding(
                         get: { self.filterCriteria.ingredientWeight ?? "" },
                         set: { self.filterCriteria.ingredientWeight = $0 }
                     ))
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
-                    // Button to add ingredient to the list
-                    Button("Add Ingredient") {
-                                        if let name = filterCriteria.ingredientName, !name.isEmpty,
-                                           let weight = filterCriteria.ingredientWeight, !weight.isEmpty {
-                                            let ingredient = Ingredient(name: name, weight: weight)
-                                            selectedIngredients.append(ingredient)
-                                            filterCriteria.ingredientName = ""
-                                            filterCriteria.ingredientWeight = ""
-                                        }
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-
-                    NavigationLink(destination: FilteredView(recipes: recipes, selectedIngredients: selectedIngredients)) {
-                        Text("Apply Filter")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding()
+                    Spacer()
+                    
+                    List(selectedIngredients, id: \.self) { ingredient in
+                        Text("\(ingredient.name) - \(ingredient.weight) gr")
                     }
-                    .disabled(selectedIngredients.isEmpty)
+                    .padding()
+                    HStack{
+                        // Button to add ingredient to the list
+                        Button("Add Ingredient") {
+                            if let name = filterCriteria.ingredientName, !name.isEmpty,
+                               let weight = filterCriteria.ingredientWeight, !weight.isEmpty {
+                                let ingredient = Ingredient(name: name, weight: weight)
+                                selectedIngredients.append(ingredient)
+                                filterCriteria.ingredientName = ""
+                                filterCriteria.ingredientWeight = ""
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.red)
+                        
+                        NavigationLink(destination: FilteredView(recipes: recipes, selectedIngredients: selectedIngredients)) {
+                            Text("Apply Filter")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(.red)
+                                .padding()
+                        }
+                        .disabled(selectedIngredients.isEmpty)
+                        Spacer()
+                        
+                    }
                 }
                 .padding()
                 .onAppear {

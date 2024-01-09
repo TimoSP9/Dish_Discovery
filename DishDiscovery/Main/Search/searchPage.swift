@@ -50,7 +50,7 @@ struct searchPage: View {
             VStack {
                 SearchBar(text: $searchText)
                     .padding()
-                
+                    Spacer()
                 List(filteredRecipes) { recipe in
                     NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                         HStack {

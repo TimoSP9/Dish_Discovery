@@ -106,7 +106,7 @@ struct HomePage: View {
                 loadRecipes()
                 getData()
             }
-            .navigationTitle("Recipes")
+            .navigationTitle("Welcome")
         }
     }
     
