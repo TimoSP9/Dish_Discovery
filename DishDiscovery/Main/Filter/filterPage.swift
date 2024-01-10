@@ -66,13 +66,15 @@ struct filterPage: View {
                     ))
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    
                     Spacer()
                     
                     List(selectedIngredients, id: \.self) { ingredient in
                         Text("\(ingredient.name) - \(ingredient.weight) gr")
                     }
                     .padding()
-                    HStack{
+                    
+                    HStack {
                         // Button to add ingredient to the list
                         Button("Add Ingredient") {
                             if let name = filterCriteria.ingredientName, !name.isEmpty,
@@ -86,7 +88,15 @@ struct filterPage: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.red)
-                        
+
+                        // Button to remove items and empty the list
+                        Button("Remove Ingredients") {
+                            selectedIngredients.removeAll()
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.red)
+
                         NavigationLink(destination: FilteredView(recipes: recipes, selectedIngredients: selectedIngredients)) {
                             Text("Apply Filter")
                                 .frame(maxWidth: .infinity)
@@ -95,8 +105,8 @@ struct filterPage: View {
                                 .padding()
                         }
                         .disabled(selectedIngredients.isEmpty)
+
                         Spacer()
-                        
                     }
                 }
                 .padding()
