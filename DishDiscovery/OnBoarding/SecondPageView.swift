@@ -14,7 +14,6 @@ struct SecondPageView: View {
     @State private var selectedPreference: String = ""
     @Binding var currentPage: Int
     public var foodList: [String] = [
-        "Vegan",
         "Kosher",
         "Halal"
     ]

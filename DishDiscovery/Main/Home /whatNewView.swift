@@ -23,8 +23,6 @@ struct whatNewView: View {
             Spacer()
             ScrollView([.horizontal]){
                 HStack{
-                    Button(action:{} , label: {Text( "Vegan")})
-                        .padding()
                     Button(action:{} , label: {Text( "Halal")})
                         .padding()
                     Button(action:{} , label: {Text( "Kosher")})

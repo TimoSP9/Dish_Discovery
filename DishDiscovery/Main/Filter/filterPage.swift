@@ -88,26 +88,25 @@ struct filterPage: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.red)
-
+                        Spacer()
                         // Button to remove items and empty the list
-                        Button("Remove Ingredients") {
+                        Button("Delete Ingredients") {
                             selectedIngredients.removeAll()
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.red)
-
-                        NavigationLink(destination: FilteredView(recipes: recipes, selectedIngredients: selectedIngredients)) {
-                            Text("Apply Filter")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .foregroundColor(.red)
-                                .padding()
-                        }
-                        .disabled(selectedIngredients.isEmpty)
-
-                        Spacer()
+                        
                     }
+                    NavigationLink(destination: FilteredView(recipes: recipes, selectedIngredients: selectedIngredients)) {
+                        Text("Apply Filter")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    .disabled(selectedIngredients.isEmpty)
+
                 }
                 .padding()
                 .onAppear {
